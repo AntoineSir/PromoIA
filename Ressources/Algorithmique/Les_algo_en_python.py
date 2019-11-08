@@ -1,13 +1,15 @@
-### algo 1
+############## algo 1 ############## 
+#1
 for i in range(0,10,2):
     print(i)
 
+#2
 k=1    
 while k<10:
    print(k)
    k+=1
    
-### algo 2
+############## algo 2 ##############
 def swap(a,b):
     c=a
     a=b
@@ -22,7 +24,7 @@ a,b = swap(a,b)
 print(a,' et ',b)
 
 
-### algo 3
+############## algo 3 ##############
 import string
 
 #1
@@ -50,7 +52,7 @@ abc = abc[::-1]
 print(abc)
 
 
-### algo 4
+############## algo 4 ##############
 def fibo_i(n):
     a,b = 0,1
     for i in range(n):
@@ -61,7 +63,8 @@ f10 = fibo_i(10)
 print(f10)
 
 
-### algo 5
+############## algo 5 ##############
+#1
 def fibo_r1(n):
     if n == 0:
         return 0
@@ -70,6 +73,7 @@ def fibo_r1(n):
     else:
         return fibo_r1(n-1)+fibo_r1(n-2)
     
+#2    
 def fibo_r2(n):
     if n<2:
         return n
@@ -79,23 +83,24 @@ def fibo_r2(n):
 print(fibo_r1(10),fibo_r2(10))
 
 
-### algo 6
-for u1 in range(10):
-    for d1 in range(10):
-        for u2 in range(10):
-            for d2 in range(10):
-                print(str(u1)+str(d1),' ',str(u2)+str(d2),',')
+############## algo 6 ##############
+for d1 in range(4):
+    for u1 in range(4):
+        for d2 in range(d1,9):
+            for u2 in range(u1,9):
+                print(str(d1)+str(u1),str(d2)+str(u2),',')
 
-### algo 7
+############## algo 7 ##############
 def epeler(mot):
     for l in mot:
         print(l)
 
 epeler('salut')
 
-### algo 8
+############## algo 8 ##############
 mot= 'salut a vous la promo IA'
 
+#1
 dic={}
 for l in mot:
     if l in dic:
@@ -104,13 +109,14 @@ for l in mot:
         dic[l]=1
 print(dic)
 
+#2
 dic2={}
 for l in mot:
     dic2[l]=mot.count(l)
 print(dic2)
 
 
-### algo 9
+############## algo 9 ##############
 def nombre(inf=10,sup=20):
     nb = eval(input("Entrez un nombre : "))
     if nb > sup:
@@ -125,6 +131,115 @@ def nombre(inf=10,sup=20):
 nombre()
 
 
-                
+############## algo 10 ##############
+def aire_triangle(b,h):
+    return (b*h)/2
 
+aire_triangle(3,4)
+
+
+############## algo 11 ##############
+def total_ttc(quantite,prix,tva):
+    return prix*quantite*(1+tva)/100
+
+total_ttc(12, 88, 19.8)
+
+
+############## algo 12 ##############
+#1
+def moyenne(notes,poids):
+    somme=0
+    somme_p=0
+    for i in range(len(notes)):
+        somme += notes[i]*poids[i]
+        somme_p += poids[i]        
+    return somme/somme_p*5 #*5 pour exprimer en pourcentage
+
+notes=[10,14,18]
+poids=[1,3,2]
+moyenne(notes,poids)
+
+#2
+def moyenne2(notes,poids):
+    liste=[]
+    for i in range(len(notes)):
+        liste.append(notes[i]*poids[i])
+    return sum(liste)/sum(poids)*5 #*5 pour exprimer en pourcentage
+
+notes=[10,14,18]
+poids=[1,3,2]
+moyenne2(notes,poids)
+
+
+############## algo 13 ##############
+#1
+def som_dig(a):
+    som = 0
+    a=str(a)
+    for i in range(len(a)):
+        som+=int(a[i])
+    return som
+som_dig(1457)
+
+#2
+def som_dig2(a):
+    return sum([int(i) for i in str(a)])
+som_dig2(1457)
+
+#3 sans la conversion en string, pour un nombre à 3 chiffres
+def som_dig3(a):
+    c = a//100
+    d = (a-c*100)//10
+    u = a-c*100-d*10
+    return c+d+u
+som_dig3(123)
+
+
+#4 sans la conversion en string en généralisant
+def som_dig4(a):
+    i_max = 1
+    while a % 10**i_max != a:
+        i_max+=1
     
+    chiffres = []
+    for k in range(i_max,0,-1):
+        coef = a//(10**(k-1))
+        chiffres.append(coef)
+        a -= coef*10**(k-1)
+    
+    return sum(chiffres)
+
+l=[6,15,89,123,999,1005,9999,15032]
+for i in l:
+    print(som_dig4(i))
+    
+    
+
+####### Bonus somme et factorielle #######
+#somme
+def som_i(n):
+    res = 0
+    for nb in range(1,n+1):
+        res += nb
+    return res
+
+def som_r(n):
+    if n==0:
+        return 0
+    else:
+        return n+som_r(n-1)
+
+#factorielle
+def fac_i(n):
+    res = 1
+    for nb in range(1,n+1):
+        res *= nb
+    return res
+
+def fac_r(n):
+    if n==0:
+        return 1
+    else:
+        return n*fac_r(n-1)
+
+
