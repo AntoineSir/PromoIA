@@ -84,11 +84,21 @@ print(fibo_r1(10),fibo_r2(10))
 
 
 ############## algo 6 ##############
-for d1 in range(4):
-    for u1 in range(4):
-        for d2 in range(d1,9):
-            for u2 in range(u1,9):
-                print(str(d1)+str(u1),str(d2)+str(u2),',')
+#1
+cpt = 0
+for d1 in range(10):
+    for u1 in range(10):
+        for d2 in range(10):
+            for u2 in range(10):
+                if d1*10 + u1 >= d2*10 + u2:
+                    pass
+                else:
+                    print(str(d1)+str(u1),' ',str(d2)+str(u2),',',sep='')
+                    cpt += 1
+cpt
+#le compteur sert juste à s'assurer qu'on a le bon nombre de combinaisons
+#le nombre de combinaisons de 2 éléments parmi 100 étant de 4950
+
 
 ############## algo 7 ##############
 def epeler(mot):
@@ -194,7 +204,6 @@ def som_dig3(a):
     return c+d+u
 som_dig3(123)
 
-
 #4 sans la conversion en string en généralisant
 def som_dig4(a):
     i_max = 1
@@ -213,8 +222,15 @@ l=[6,15,89,123,999,1005,9999,15032]
 for i in l:
     print(som_dig4(i))
     
-    
+#4 encore une autre méthode (celle de Pierre-Vincent)
+def som_dig5(a):
+    som = 0
+    while a != 0:
+        som += a % 10
+        a = int((a-a%10)/10)
+    return som
 
+        
 ####### Bonus somme et factorielle #######
 #somme
 def som_i(n):
