@@ -212,11 +212,19 @@ def tri_bul(liste):
 ### comparaison des temps d'exécution
 import time
 durees = {}
-fonctions = ['tri_max','tri_ins','tri_qck','tri_fus','tri_bul']
-for i in range(5):     
+fonctions = ['tri_max','tri_ins','tri_qck','tri_fus','tri_bul','sorted']
+for i in range(6):     
     l = genere(10000,0,100)
     tri = eval(fonctions[i])
     debut = time.time()
     tri(l)
     durees[fonctions[i]] = time.time() - debut
 durees
+"""
+{'tri_max': 1.3748893737792969,
+ 'tri_ins': 2.934324026107788,
+ 'tri_qck': 0.055925846099853516,
+ 'tri_fus': 0.024867534637451172,
+ 'tri_bul': 6.366076707839966,
+ 'sorted': 0.0007810592651367188}
+"""
