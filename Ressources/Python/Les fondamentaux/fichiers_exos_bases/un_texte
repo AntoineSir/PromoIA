@@ -53,3 +53,5 @@ def   pascal(i,k):
 plus_grd_coef   =   lambda   ligne   :   pascal(ligne,ligne//2+1)
 
 list(map(plus_grd_coef,list(range(1,11))))
+j'entre une nouvelle ligne
+et encore une
