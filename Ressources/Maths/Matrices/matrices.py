@@ -103,20 +103,3 @@ for i in range(A.shape[0]):
 
 
 
-
-
-M = np.arange(1, 21).reshape((4,5), order='F')
-print(M)
-
-idx_row = [1, 2, 0]
-idx_col = [1, 4, 2]
-#la méthode suivante marche pas car Python créé 3 couples en fonction de 2 listes
-print("FAUX:",M[idx_row, idx_col])
-
-#une première méthode qui marche
-print(M[idx_row][:,idx_col])
-
-#une seconde méthode qui marche
-idx = np.ix_(idx_row, idx_col)
-print(idx)
-print(M[idx])
