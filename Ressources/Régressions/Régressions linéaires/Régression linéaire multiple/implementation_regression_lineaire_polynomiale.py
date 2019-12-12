@@ -2,22 +2,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib qt5
 
-# Données au choix (tester pour les 2)
-#data = np.genfromtxt('salaires.csv',delimiter=',',skip_header=True)
-#x = data[:,:-1]
-#y = data[:,-1:]
-
-#possibilité de générer des données aléatoirement avec sklearn
+# Données générées aléatoirement avec sklearn
 from sklearn.datasets import make_regression
 x, y = make_regression(n_samples = 100, n_features = 1, noise = 10)
 y = y.reshape(y.shape[0],1)
+# On veut des données non-linéaires donc il faut modifier un peu y
+y = y**2 + 2 * y + abs(y/2) 
 plt.scatter(x,y)
 
 # Matrice X
-X = np.hstack((x,np.ones(x.shape)))
+X = np.hstack((x**2,x,np.ones(x.shape)))
 
 # Initialisation theta
-theta = 50*np.random.randn(2,1)
+theta = 50*np.random.randn(3,1)
 
 # Modèle
 def model(X,theta):
@@ -45,21 +42,27 @@ def sol_exacte(X,y):
     return np.linalg.inv(X.T @ X) @ X.T @ y
 
 # Optimisation : recherche du meilleur theta
-theta_hat, couts = desc_grad(X,y,theta,alpha=0.05,n_max=500)
+theta_hat, couts = desc_grad(X,y,theta,alpha=0.01,n_max=500)
 
 print(theta_hat,sol_exacte(X,y))
+
+# Tri des données pour l'affichage
+data_plt = np.array([x,model(X,theta_hat)])
+data_plt = sorted(data_plt, key = lambda x: data_plat[])
+y_pred_sorted = sorted(model(X,theta_hat), key = )
 
 # Visualisation
 fig, (ax1,ax2) = plt.subplots(1,2,figsize=(15,8))
 ax1.scatter(x,y)
-ax1.plot(x,model(X,theta_hat),c='red')
-ax1.plot(x,model(X,sol_exacte(X,y)),c='green')
-
+ax1.scatter(x,model(X,theta_hat),c='red')
 ax2.plot(couts)
+
 
 # Évaluation de la régression avec le coefficient R²
 def R_2(y,y_pred):
     num = np.sum((y-y_pred)**2)
     den = np.sum((y-np.mean(y))**2)
     return 1-num/den
+
+print(R_2(y,model(X,theta)))
 
