@@ -206,14 +206,15 @@ b=item.copy()
 b['id']=list(range(1,18))
 b=b[['id','prix']]
 c = a.merge(b, how ='left', left_on ='item', right_on='id')
-c = c[['order','prix']]
+c['prix_tot'] = c.prix * c.nb
+c = c[['order','prix_tot']]
 order.tot = c.groupby('order').sum().values
 
 ####################################################################################
 #### (re)Création de la base JunkFood via l'exécution du script SQL JunkFood_DB.sql
 
 # Lecture du script
-with open('JunkFood_DB.sql','r') as f:
+with open('Scripts/JunkFood_DB.sql','r') as f:
     fileSQL = f.read()
 # Suppression retour à la ligne et tabulation
 fileSQL = fileSQL.replace('\n','')
@@ -284,7 +285,7 @@ try:
     #---------------------------------------#
     #Table Recettes: id, item_id, ing_id, unites
     for k in range(len(recette)):
-        curseur.execute("INSERT INTO Recettes VALUES (0,{0},{1},{2})".format(*recette.iloc[k]))
+        curseur.execute("INSERT INTO Recettes VALUES ({0},{1},{2})".format(*recette.iloc[k]))
 
     #------------------------------------#
     #Table Stocks: ing_id, rest_id, unites

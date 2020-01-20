@@ -106,11 +106,10 @@ CREATE TABLE Ingredients (
 );
 
 CREATE TABLE Recettes (
-	id INT NOT NULL AUTO_INCREMENT,
 	item_id INT NOT NULL,
 	ing_id INT NOT NULL,
 	unites DOUBLE NOT NULL,
-	PRIMARY KEY (id)
+	UNIQUE (item_id, ing_id)
 );
 
 ALTER TABLE Restaurants ADD CONSTRAINT Restaurants_fk0 FOREIGN KEY (pays_id) REFERENCES Pays(id) ON DELETE CASCADE;
