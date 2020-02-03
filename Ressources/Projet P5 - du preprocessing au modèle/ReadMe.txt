@@ -12,7 +12,7 @@ As to do so, you will have to :
 
 THIS PROJECT IS DUE TO TOMORROW 16:00
 
-Indications: for those who feel confortable, you can try to use the sklearn pipeline class but this is not an obligation nor a necessity. Feel free to experiment. Just remind that deadline is tomorrow 13:30 and there won't be no extra time for once...
+Indications: for those who feel confortable, you can try to use the sklearn pipeline class but this is not an obligation nor a necessity. Feel free to experiment. Just remind that deadline is tomorrow 16:00 and there won't be no extra time for once...
 
 Groups for this project are as follow : 
 1. Anne, Sophie
