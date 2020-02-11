@@ -143,12 +143,13 @@ $(document).ready(function () {
 <pre><code>## The following objects are masked from 'package:base':
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library(ggplot2)
-diamonds &lt;- ggplot2::diamonds %&gt;% mutate_if(is.factor, ~ factor(., ordered = FALSE))</code></pre>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<pre><code>## Warning: package 'ggplot2' was built under R version 3.5.3</code></pre>
+<pre class="r"><code>diamonds &lt;- ggplot2::diamonds %&gt;% mutate_if(is.factor, ~ factor(., ordered = FALSE))</code></pre>
 <ol style="list-style-type: decimal">
 <li>À l’aide de statistiques descriptives et de représentations graphiques (environ 4), présentez les effets des variables à disposition sur le prix des diamants.<br />
 </li>
-<li>Construisez un modèle permettant de prédire le prix d’un diamant à partir de ses caractéristiques. Présentez sa précision à l’aide d’une méthode d’évaluation croisée.</li>
+<li>Construisez un modèle permettant de prédire le prix d’un diamant à partir de ses caractéristiques. Présentez sa précision à l’aide d’une méthode de validation croisée.</li>
 </ol>
 </div>
 
