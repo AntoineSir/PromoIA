@@ -269,13 +269,8 @@ div.tocify {
 1. Lisez et faites le cas pratique de la <a href="https://shiny.rstudio.com/tutorial/written-tutorial/lesson4/">leçon 4 du tutoriel RStudio</a>.<br />
 2. Créez une application permettant de faire un plot sur la table <code>iris</code> en fonction de variables choisies par l’utilisateur.<br />
 3. Ajoutez à votre application la possibilité pour l’utilisateur de ne filtrer que certaines observations en fonction de la longueur et la largeur des pétale et des sépales.<br />
-4. Faites maintenant en sorte que le graphique ne se mette pas à jour dès que l’utilisateur change des paramètres mais seulement après qu’il clique sur un bouton (voir <code>actionButton()</code> pour la partie ui et <code>eventreactive()</code> pour la partie server).</p>
-</div>
-<div id="cas-pratique-essayez-de-recoder-mon-app" class="section level2">
-<h2>Cas pratique : essayez de recoder mon app</h2>
-<p>Vous pouvez lancer mon app ainsi. A partir du package que je vous aurai partagé, lancez :</p>
-<pre class="r"><code>install.packages(&quot;mon/chemin/app.voitures_0.0.0.9000.tar.gz&quot;, repos = NULL, type = &quot;source&quot;)
-app.voitures::run_app()</code></pre>
+4. Faites maintenant en sorte que le graphique ne se mette pas à jour dès que l’utilisateur change des paramètres mais seulement après qu’il clique sur un bouton (voir <code>actionButton()</code> pour la partie ui et <code>eventreactive()</code> pour la partie server).<br />
+5. Créez une application avec 3 onglets : dans le premier, le plot réalisé jusqu’à maintenant, dans le second, la table iris affichée grâce à dataTableOutput avec la possibilité pour l’utilisateur de trier selon la valeur de Species, dans le troisième un texte qui donne le résultat de la moyenne d’une variable choisie par l’utilisateur (exemple : “la moyenne de la variable Sepal.Length est de 5.4”)</p>
 </div>
 
 
