@@ -51,7 +51,7 @@ def reponse_wiki(phrase_user):
     index_max_sim = np.argmax(similarity)
     # Si la similarité max ets égale à 0 == pas de correspondance trouvée
     if(similarity[index_max_sim] == 0):
-        robo_response = "Je n'ai pas trouvé cette information, désolé!"
+        robo_response = "I didn't find this info, sorry"
     # Sinon, on sort la phrase correspondant le plus : 
     else:
         robo_response = sent_tokens[index_max_sim]
