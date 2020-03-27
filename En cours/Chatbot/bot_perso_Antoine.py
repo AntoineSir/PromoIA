@@ -8,10 +8,10 @@ Created on Thu Mar 26 08:31:31 2020
 import re
 import random
 
-bonjour = r"salut .*|bonjour .*|coucou .*|hey .*|hello .*"
+bonjour = r"salut.*|bonjour.*|coucou.*|hey.*|hello.*"
 bjr_bot = ["bonjour bonjour!", "salut toi ;)", "hello!"]
 
-sava = r".*ça va.*\?|.*forme\?|vas? bien\?"
+sava = r".*ça va.*\?|.*forme\?|.* vas? bien\?"
 sava_bot = ["écoute oui ça va", "ça va bieng", "je pète la forme!"]
 
 nom = r".*appelle(s|z)?.*\?|.*nom\?"
