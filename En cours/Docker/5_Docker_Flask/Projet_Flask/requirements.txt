@@ -1,0 +1,9 @@
+Flask
+mysql-connector-python
+numpy
+pandas
+matplotlib
+pybase64
+opencv-python
+scipy
+sklearn

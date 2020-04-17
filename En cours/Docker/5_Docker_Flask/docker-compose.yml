@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+    app:
+        build: .
+        environment:
+            - DB_HOST=db
+            - DB_USER=root
+            - DB_PASSWORD=password
+        networks:
+            - flask_net
+        ports:
+            - 5000:5000
+        volumes:
+            - ./Projet_Flask:/src
+    db:
+        image: mariadb:latest
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=app_db
+        volumes:
+            - mariadb_data:/var/lib/mysql
+        networks:
+            - flask_net
+
+volumes:
+    mariadb_data:
+
+networks:
+    flask_net:
