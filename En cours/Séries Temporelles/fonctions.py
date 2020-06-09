@@ -40,7 +40,7 @@ def ts_plot(y, lags=None, title=''):
     plt.show()
     
 
-def plot_acf_pacf(y, pacf=False):
+def plot_acf_pacf(y, plot_pacf=False):
     """
     représentation des sorties ACF/PACF
     """
@@ -48,8 +48,8 @@ def plot_acf_pacf(y, pacf=False):
     y_len = len(y)
     y2 = acf(y.values, fft=True)
     
-    if pacf:
-        y2 = pacf(y.values, fft=True)[1:]
+    if plot_pacf:
+        y2 = pacf(y.values)[1:]
         label = 'PACF'
         
     plt.figure(figsize=(14,6))
@@ -60,6 +60,7 @@ def plot_acf_pacf(y, pacf=False):
     plt.axhline(y=-1.96/np.sqrt(y_len), color='b', linestyle='--', linewidth=0.8)
     plt.axhline(y=1.96/np.sqrt(y_len), color='b', linestyle='--', linewidth=0.8)
     plt.ylim(-1, 1)
+    plt.xlim(0,20)
     plt.show()
     
     
