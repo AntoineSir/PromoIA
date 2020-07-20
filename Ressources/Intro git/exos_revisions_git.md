@@ -2,6 +2,7 @@
 
 Quelques exercices de révision sur l'utilisation de git 
 
+
 ## Exercice 1: basics
 
 ### 1. Les bases
@@ -11,10 +12,12 @@ Quelques exercices de révision sur l'utilisation de git
 3. L'ajouter et le commiter avec le messsage "révision - exercice1"
 4. Push
 
+
 ### 2. Branches
 1. Faire un fork du repo
 2. Créer une branche avec votre prenom/username
 3. Ajouter un fichier le commiter et pusher sur la branche
+
 
 ### 3. Enlever un fichier qui s'apprête à être commit
 
@@ -24,6 +27,7 @@ Quelques exercices de révision sur l'utilisation de git
 À l'aide de git reset HEAD nom_ficher enlever test2.py du stagging
 4. commit test1.py avec le message que vous voulez
 
+
 ### 4. Ignorer des fichiers et dossier.
 
 1. créer un dossier data
@@ -32,7 +36,9 @@ Quelques exercices de révision sur l'utilisation de git
 4. et mettre data/ dedans
 5. refaire un git status et assurez vous que git ne considère plus le fichier
 
-## Exercice 2: à plusieurs
+## Exercice 2: à plusieurs
+
+2 par 2 on se prend la main
 
 ### 1. Première étape
 1. Mettez vous par deux
@@ -41,6 +47,7 @@ Quelques exercices de révision sur l'utilisation de git
 4. A crée un fichier et l'ajoute dans le repository
 5. A commit et push. 
 
+
 ### 2. Deuxième étape
 
 Une fois que c'est fait 
@@ -48,13 +55,15 @@ Une fois que c'est fait
 1. B clone le repository puis modifie le fichier créé par A. 
 2. B commit et push 
 
+
 ### 3. Génération d'un conflit
 
 1. Pendant ce temps A modifie le fichier qu'il a créé, le commit (**sans le push**). 
 2. Une fois que B a bien fait son push, A tente de push et devrait avoir une erreur. 
 3. A suit les indications de l'erreur et un conflit devrait être apparu ! 
 
-## 4. Résolution d'un conflit
+
+### 4. Résolution d'un conflit
 
 Quand un même ficher est modifié par deux personnes différents, git ne sait pas (sauf dans certains cas) quelles modifications garder. 
 
@@ -65,7 +74,9 @@ Quand un même ficher est modifié par deux personnes différents, git ne sait p
 
 Vous pouvez si vous le souhaitez refaire les étapes en inversant les rôles.
 
-## Exercice 3:
+
+## Exercice 3:
+
 
 ### 1. Retour sur les branches
 
@@ -85,6 +96,7 @@ Mais quand on est content d'une modification effectuée sur une branche on veut 
 3. Vérifier que les modifications sont bien intégrées dans master
 4. Push vers le repository distant
 5. Lire [cette doc](https://git-scm.com/book/fr/v1/Les-branches-avec-Git-Rebaser)
+
 
 
 ## Exercice 4: merge et fetch
