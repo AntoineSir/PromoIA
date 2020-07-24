@@ -1,6 +1,7 @@
 # LIENS UTILES AZURE DP-100
 
 ## Des exos/tutos
+https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials
 https://docs.microsoft.com/fr-fr/learn/paths/create-no-code-predictive-models-azure-machine-learning/
 https://docs.microsoft.com/fr-fr/learn/paths/build-ai-solutions-with-azure-ml-service/
 
