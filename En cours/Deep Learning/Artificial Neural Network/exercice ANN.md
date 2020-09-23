@@ -24,6 +24,35 @@ C'est juste pour vous échauffer donc ça doit être fait en moins d'une heure �
 
 ## Dans le vif du sujet
 
-Vous l'aurez compris, il s'agit ici d'entraîner votre premier réseau de neurones.   
-Vous aurez bien sûr besoin du package `keras` et il vous faudra aussi certainement installer `theano` et `tensorflow`.  
+Vous l'aurez compris, il s'agit ici de résoudre le problème à l'aide d'un réseau de neurones.   
+Vous aurez bien sûr besoin du package `keras` et il vous faudra aussi certainement installer `tensorflow`(et peut-être `theano` si besoin).  
 À vous de jouer !
+N'oubliez pas le preprocessing !
+
+## Évaluation du réseau et affinage des hyper-paramètres
+
+Jusqu'à maintenant, on a évalué les réseaux qu'on a vu en regardant uniquement l'accuracy mais cette valeur n'est pas déterministe puisqu'elle dépend de certains paramètres aléatoires comme le train_test_split, l'intialisation des paramètres etc...
+
+Une solution par rapport à ce problème est de répéter l'entraînement plusieurs fois et de regarder les résultats en moyenne. On l'a déjà utilisé et ça s'appelle la validation croisée.
+
+Mettez en place la validation croisée en utilisant `cross_val_score` puis affiner les paramètres avec `GridSearchCV`.
+
+**/!\** Vous aurez besoin de ce qu'on appelle un wrapper pour pouvoir relier `keras` à `sklearn` et utiliser un modèle de l'un dans l'autre. Ça tombe bien, ça existe : regarder la librairie `keras.wrappers.scikit_learn`.
+
+## Sauvegarde et chargement des réseaux
+
+Regarder les méthodes `save` et `load_model` de la librairie `keras.models` pour la sauvegarde et le chargement des modèle. Quel format de fichier utiliser ?
+
+Si vous souhaitez ne sauvegarder que l'architecture du modèle (sans les poids ni la configuration d'entraînement), vous pouvez utiliser `to_json`.
+
+Enfin, pour ne sauvegarder que les poids, vous avez la méthode `save_weights`.
+
+## Complément sur l'overfitting
+
+Toujours sur les données de la banque, entrainer un réseau ayant une structure complexe avec beaucoup de neurones et de couches afin de générer une situation d'overfitting.  
+Comparer l'accuracy sur les échantillons train et test pour confirmer le cas de sur-apprentissage.
+
+Reprendre le même réseau en utilisant des layers `Dropout` pour réduire ce problème.  
+Comparer à nouveau l'accuracy pour voir l'effet des `Dropout` sur l'overfitting.
+
+Une autre méthode pour limiter le sur-apprentissage est la régularisation. Est-ilpossible d'en faire avec un réseau de neurones ? Si oui, allez-y
