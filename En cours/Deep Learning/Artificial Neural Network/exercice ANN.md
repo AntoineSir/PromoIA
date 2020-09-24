@@ -1,6 +1,6 @@
 # Réseau de neurones et attrition des clients bancaires
 
-Votre premier réseau de neurones avec Python.
+Réseau de neurones avec Python (Keras)
 
 ## La problématique
 
@@ -37,7 +37,7 @@ Une solution par rapport à ce problème est de répéter l'entraînement plusie
 
 Mettez en place la validation croisée en utilisant `cross_val_score` puis affiner les paramètres avec `GridSearchCV`.
 
-**/!\** Vous aurez besoin de ce qu'on appelle un wrapper pour pouvoir relier `keras` à `sklearn` et utiliser un modèle de l'un dans l'autre. Ça tombe bien, ça existe : regarder la librairie `keras.wrappers.scikit_learn`.
+**/!\\** Vous aurez besoin de ce qu'on appelle un wrapper pour pouvoir relier `keras` à `sklearn` et utiliser un modèle de l'un dans l'autre. Ça tombe bien, ça existe : regarder la librairie `keras.wrappers.scikit_learn`.
 
 ## Sauvegarde et chargement des réseaux
 
