@@ -1,6 +1,6 @@
-# Semaine du 19 octobre - Computer Vision
+# Introduction (et plus) à la vision par ordinateur
 
-Cette semaine sera consacrée à la vision par ordinateur, à ses particularités et à ses outils comme la bibliothèque dédiée OpenCV.
+Cette semaine sera consacrée à la vision par ordinateur, à ses particularités et à ses outils avec notamment la bibliothèque dédiée OpenCV.
 
 Les travaux donneront lieu au rendu de 4 notebooks :
 1. Application d'algorithmes de tracking d'objet à une vidéo
@@ -8,29 +8,24 @@ Les travaux donneront lieu au rendu de 4 notebooks :
 3. Classification d'un dataset d'images par des méthodes hors Deep learning
 4. Classification d'un dataset d'images par Deep learning
 
-## I Généralités sur la vision par ordinateur
+## **1. Généralités sur la vision par ordinateur**
 
-### Les problématiques de vision par ordinateur
+### **1.1 Les problématiques de vision par ordinateur**
 
 Une vidéo de 11 minutes sur la vision par ordinateur [ici](https://www.youtube.com/watch?v=-4E2-0sxVUM).
 
 A lire _en diagonal_ en guise d'introduction pour avoir une idée des problématiques principales résolues par le CV : [5 computer vision techniques](https://heartbeat.fritz.ai/the-5-computer-vision-techniques-that-will-change-how-you-see-the-world-1ee19334354b)
 
 En résumé :
-
-* Image classification : le problème le plus courant en CV, celui qui a lancé la révolution du Deep Learning avec le concours ImageNet
-
-* Object detection : trouver plusieurs objets dans une scène, voir par exemple cette lecture sur les cascades de Haar [(ici)](https://pymotion.com/detection-objet-cascade-haar/) et une vidéo sur la détection d'objets avec cascades de Haar [(Haar cascade with OpenCV)](https://www.youtube.com/watch?v=88HdqNDQsEk)
-
-* Object tracking : suivre des objets dans une vidéo d'une image à une autre (les objets doivent avoir été isolés avant)
-
-* Semantic segmentation : attribuer des labels aux objets identifiés
-
-* Instance segmentation : problème le plus riche, différencier tous les objets dans la scène au pixel près
+- Image classification : le problème le plus courant en CV, celui qui a lancé la révolution du Deep Learning avec le concours ImageNet
+- Object detection : trouver plusieurs objets dans une scène, voir par exemple cette lecture sur les cascades de Haar [(ici)](https://pymotion.com/detection-objet-cascade-haar/) et une vidéo sur la détection d'objets avec cascades de Haar [(Haar cascade with OpenCV)](https://www.youtube.com/watch?v=88HdqNDQsEk)
+- Object tracking : suivre des objets dans une vidéo d'une image à une autre (les objets doivent avoir été isolés avant)
+- Semantic segmentation : attribuer des labels aux objets identifiés
+- Instance segmentation : problème le plus riche, différencier tous les objets dans la scène au pixel près
 
 Nous nous focaliserons sur la classification d'images cette semaine même si vous aurez la possibilité d'expérimenter du tracking d'objet.
 
-### Computer Vision et Deep Learning
+### **1.2 Computer Vision et Deep Learning**
 
 Les problèmes de Computer Vision (CV) ont commencé à être étudiés bien avant le Deep Learning et un ensemble de techniques propres aux images ont été développées.
 
@@ -44,21 +39,18 @@ Cherchez des librairies Python dédiées à ces différentes tâches.
 Un article plus complet (sur Medium) : [ici](https://medium.com/overture-ai/part-2-overview-of-computer-vision-methods-69c56843c567)
 
 
-## II Un exemple concret : le tracking d'objet avec OpenCV
+## **2. Un exemple concret : le tracking d'objet avec OpenCV**
 
-### Installation de la bibliothèque OpenCV sous Python
+### **2.1 Installation de la bibliothèque OpenCV sous Python**
 
-* Créez un environnement dédié au Computer Vision utilisant Python 3.6
-
-* Passez par pip et installez opencv-python dans cet environnement dédié
-
-* Plus de détails [ici](https://pypi.org/project/opencv-python/)
-
-* Il faudra installer aussi opencv-contrib-python [ici](https://pypi.org/project/opencv-contrib-python/)
+- Créez un environnement dédié au Computer Vision utilisant Python 3.6 au moins.
+- Passez par pip et installez opencv-python dans cet environnement dédié
+- Plus de détails [ici](https://pypi.org/project/opencv-python/)
+- Il faudra installer aussi opencv-contrib-python [ici](https://pypi.org/project/opencv-contrib-python/)
 
 **NOTE**: attention à la version de Python utilisée, je conseille de s'en tenir à la 3.6 pour éviter des problèmes avec OpenCV...
 
-### Tracking avec les modèles d'OpenCV
+### **2.2 Tracking avec les modèles d'OpenCV**
 
 Une fois OpenCV installée, expérimentez le tracking d'objet avec différents algorithmes en vous inspirant des exemples de code suivants :
 
@@ -70,25 +62,24 @@ https://www.learnopencv.com/goturn-deep-learning-based-object-tracking/
 
 Suggestions :
 - Les méthodes suivantes donnent des résultats intéressants :
-    + CSRT
-    + KCF
-    + MOSSE
-    + GoTurn (si vous arrivez à le faire tourner !)
-
+>- CSRT
+>- KCF
+>- MOSSE
+>-  GoTurn (si vous arrivez à le faire tourner !)
 - Partir d'une **courte** vidéo contenant des personnages se déplaçant (si pas d'idées, cherchez chaplin.mp4 ou filmez-vous !)
 - Comparez les méthodes de tracking en termes de temps de calcul ? Lesquelles semblent compatibles avec un traitement en temps réel sur votre machine ?
 
 
 **NOTE**: l'utilisation de GOTURN (seul modèle à base de Deep Learning disponible dans OpenCV) peut être délicate, ne pas perdre de temps avec si cela ne fonctionne pas du premier coup.
 
-### Bonus : segmentation sémantique
+**Bonus : segmentation sémantique**
 
 Testez facilement la détection d'objets courants avec labels sur une image de votre choix ([ici un exemple avec le code](https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606)). Ludique et rapide.
 
 
-## III Les techniques de pré-traitement des images ou Preprocessing (lundi 2ème moitié d'après-midi et mardi matin)
+## **3. Les techniques de pré-traitement des images ou Preprocessing (lundi 2ème moitié d'après-midi et mardi matin)**
 
-### Pré-traitements classiques
+### **3.1 Pré-traitements classiques**
 
 Voir la doc d'OpenCV [ici](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_table_of_contents_imgproc/py_table_of_contents_imgproc.html) pour les principales fonctions de preprocessing.
 
@@ -127,7 +118,7 @@ __Bonus : application à de la vidéo__
 - Appliquez la segmentation binaire précédente à chaque frame et afficher la vidéo correspondante
 - Une façon de le faire [ici](https://github.com/Simplon-IA-Bdx-1/opencv-fire-segmentation)
 
-### Réduction de la dimensionnalité
+### **3.2 Réduction de la dimensionnalité**
 
 La réduction de la dimensionnalité du dataset est cruciale avec les images. Elle peut se limiter à réduire la résolution de l'image et/ou à ignorer certains canaux dans l'espace des couleurs.
 
@@ -153,11 +144,11 @@ Pour la différence entre PCA et ICA : [ici](http://compneurosci.com/wiki/images
 
 **Ajoutez dans le notebook précédent une réduction de la dimensionnalité de votre choix à vos images. Cela vous servira pour la classification d'images ensuite.**
 
-## IV Classification d'image : Galaxy Zoo
+## **4. Classification d'image : Galaxy Zoo**
 
 Objectif : avec Keras, résoudre au mieux le problème de classification des images de galaxies en 3 classes (rondes, à disque ou pas une galaxie), à l'aide de techniques non Deep Learning et de Deep Learning (transfer learning / CNN "maison").
 
-### Le dataset : Galaxy Zoo
+### **4.1 Le dataset : Galaxy Zoo**
 
 Une base d'images extraites du projet [Galaxy Zoo](https://www.zooniverse.org/projects/zookeeper/galaxy-zoo/).
 
@@ -165,7 +156,7 @@ Les données sont téléchargeables ici : [galaxy zoo data](https://www.kaggle.c
 
 Combien y-a-t-il d'exemples ? Quelles sont les classes ? Sont-elles équilibrées ?
 
-### Classification par modèles non Deep Learning (mardi après-midi)
+### **4.2 Classification par modèles non Deep Learning**
 
 Il n'y a pas que le Deep Learning pour faire de la classification d'images.
 
@@ -187,31 +178,27 @@ Suggestions :
   * fabrication "créative" de features (exemple, le pixel au centre, des ratios d'intensité entre zones, etc.) pour améliorer les baselines
 * A l'étape 1, essayez d'intercaler une PCA et comparez avec les résultats sans PCA
 
-### Classification par Deep Learning
+### **4.3 Classification par Deep Learning**
 
-### Compression des images
+#### Compression des images
 
 Cherchez comment réduire la complexité du problème avec un mix des techniques déjà testées auparavant (exemples : rognage, redimensionnement, etc.).
 
-A ce stade, il faudra s'être fixé les traitements en amont et leur implémentation (à la volée ou à partir de répertoires intermédiaires).
+À ce stade, il faudra s'être fixé les traitements en amont et leur implémentation (à la volée ou à partir de répertoires intermédiaires).
 
-### Transfer learning
+#### Transfer learning
 
 Le Transfer Learning consiste à reprendre en partie un modèle de CNN déjà entraîné. Concrétement et en général, on garde toute l'architecture de convolution telle quelle pour bénéficier de l'extraction de features déjà apprises et on remplace la partie classification (dernières couches du CNN) par des couches de classification à entraîner sur le dataset spécifique.
 
 Le Transfer Learning passe donc par les étapes suivantes :
-
 * Choix d'un modèle sur étagère (exemple VGG16, VGG19, Inception, Resnet50, etc.)
-
 * Choix du périmètre de transfer learning en fonction de la taille du dataset (plus il est petit, moins on veut de paramètres à optimiser !)
-
 * Ajout des couches de classification aux couches de convolution retenues
-
 * Entraînement
 
 Un bon tutoriel [ici](https://machinelearningmastery.com/how-to-use-transfer-learning-when-developing-convolutional-neural-network-models/)
 
-### Data augmentation
+#### Data augmentation
 
 Les datasets d'images coûtent chers à obtenir, surtout dans un domaine spécialisé. L'augmentation de données est une méthode importante pour améliorer l'entraînement des modèles de Deep Learning en leur fournissant des exemples réalistes fabriqués à partir des images originales.
 
@@ -252,6 +239,6 @@ Dans un deuxième temps, on pourra chercher à identifier la présence d'une for
 
 
 
-### Un exemple de solution
+#### Un exemple de solution
 
 Il s'agit du pipeline gagnant du challenge Galaxy Zoo : [sur github](https://github.com/benanne/kaggle-galaxies/blob/master/doc/documentation.pdf). Attention, le problème résolu dans ce cas était plus complexe que celui sur lequel vous avez travaillé. Néanmoins l'approche est très bien décrite et permet de s'inspirer.
