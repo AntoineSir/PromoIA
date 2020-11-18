@@ -1,13 +1,20 @@
 # Veille sur les RNN
 
 - Les RNN :
->- principe ?
->- représentation graphique ?
->- structures ?
+>- principe
+>- représentation graphique
+>- structures
 
-- La fuite du gradient ?
+- La fuite du gradient
+>- c'est quoi le gradient et quel est son rôle en ML/DL ?
+>- c'est quoi le problème du vanishing/exploding gradient ?
+>- pourquoi le problème se pose dans les RnN et pas les autres réseaux ?
+>- quelles solutions ?
 
-- LSTM ?
+- LSTM
+>- principe
+>- description des étapes
+>- variantes
 
 Quelques ressources mais y en plein d'autres !
 https://www.youtube.com/watch?v=EL439RMv3Xc
