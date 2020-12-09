@@ -6,10 +6,6 @@ Il s'agit du cas pratique 1 (évaluation E2) du titre professionnel de "Dévelop
 
 Triof est une start-up de tri et de recyclage des déchets spécialisée dans le traitement des déchets plastiques. Elle a développé une machine qu'elle loue aux entreprise : grâce à cette dernières les salariés peuvent déposer leurs déchets plastiques afin qu'ils soient recyclés en fil d'impression 3D. Malheureusement on a remarqué que les personnes n'indiquaient pas toujours bien quel déchet ils inséraient or cela a un impact négatif sur la qualité du filameent. Triof vous sollicite pour proposer une solution intégrant de l'IA afin de pallier ce problème.
 
-## Préliminaire
-
-Après avoir analyser le fonctionnement de l'application, présenter en quelques lignes (une page maximum) votre compréhension du problème, les solutions qui vous paraissent adaptées et comment vous les mettriez en place. 
-
 ## Première approche : une solution IA Cloud
 
 Proposer une solution à l'aide du service Custom Vision d'Azure pour régler le problème.  
@@ -30,3 +26,13 @@ Indications:
 - Vous êtes relativement libres sur cette partie mais l'idée est de construire un modèle permettant de classifier, en plus du type de déchet, la propreté du déchet.
 - Vous pourrez soit construire votre propre modèle soit utiliser du *transfer learning* à partir de modèles de computer vision pré-implémentés.
 - Une étape cruciale va être la constitution de votre jeu de données d'entraînement. Plusieurs solutions sont possibles notamment le scraping. Quoi qu'il en soit, n'oubliez pas l'existence de la *data augmentation*...
+
+## Les livrables
+
+Voir les infos sur le passage du titre pro :
+https://github.com/louiskuhn/PromoIA/blob/master/Admin/Titre%20Professionnel%20Simplon/Developpeurse_en_intelligence_artificielle_Mode_demploi_passage_du_titre_1.pdf
+
+- le code de l'application finale
+- 1 rapport écrit de 5 à 10 pages sur les réalisations produites
+- 1 présentation orale de 5 min (pour la soutenance)
+
