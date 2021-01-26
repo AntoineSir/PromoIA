@@ -1,0 +1,1 @@
+Les données ont été téléchargées via kaggle, on a conservé ici uniquement les données de l'échantillon d'entraînement images_training car sinon nous n'avons pas les probabilités (les labels, notre *y* quoi)
