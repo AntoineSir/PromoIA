@@ -15,6 +15,8 @@ import datetime
 
 import mysql.connector as mariadb
 
+import os
+
 from faker import Faker #pour générer des données (nom, prénom, adresse, etc...)
 fake = Faker('fr_FR')
 
@@ -216,13 +218,20 @@ order.tot = c.groupby('order').sum().values
 # Lecture du script
 with open('Scripts/JunkFood_DB.sql','r') as f:
     fileSQL = f.read()
+    
 # Suppression retour à la ligne et tabulation
 fileSQL = fileSQL.replace('\n','')
 fileSQL = fileSQL.replace('\t','')
+
 # Séparation du script en commandes distinctes
 cmdSQL = fileSQL.split(';')
+
 # Connexion à la base MariaDB
-JunkFood = mariadb.connect(host='localhost', user='root', password='', database='JunkFood')
+mdbusr = os.getenv('mariadb_usr')
+mdbpwd = os.getenv('mariadb_pwd')
+db = 'JunkFood'
+
+JunkFood = mariadb.connect(host='localhost', user=mdbusr, password=mdbpwd, database=db))
 curseur = JunkFood.cursor()
 # Exécution des commandes du script une par une
 for cmd in cmdSQL:
@@ -235,7 +244,7 @@ for cmd in cmdSQL:
 ###############################
 #### Insertion dans les tables
 try:
-    JunkFood = mariadb.connect(host='localhost', user='root', password='deaaz', database='JunkFood')
+    JunkFood = mariadb.connect(host='localhost', user=mdbusr, password=mdbpwd, database=db)
     curseur = JunkFood.cursor()
     
     #-------------------#
